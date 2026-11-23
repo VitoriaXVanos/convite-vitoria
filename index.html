@@ -184,6 +184,20 @@
   .countdown span{display:block;margin-top:6px;font-size:.7rem;letter-spacing:.22em;text-indent:.22em;text-transform:uppercase;color:var(--ink)}
   .count-done{font-family:'Great Vibes',cursive;font-size:2rem;color:var(--gold-light)}
 
+  /* ---------- versículo ---------- */
+  .verse{
+    margin:38px 6px 0;padding-top:26px;position:relative;
+    font-style:italic;font-weight:500;font-size:1.22rem;line-height:1.5;color:var(--ink);
+  }
+  .verse::before{
+    content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+    width:120px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  }
+  .verse cite{
+    display:block;margin-top:10px;font-style:normal;font-weight:600;
+    font-size:.8rem;letter-spacing:.3em;text-indent:.3em;text-transform:uppercase;color:var(--gold-light);
+  }
+
   /* ---------- chamada ---------- */
   .lead{
     font-family:'Great Vibes',cursive;font-weight:400;
@@ -331,6 +345,11 @@
     <p class="count-done" id="cdDone" hidden>Chegou o grande dia!</p>
   </section>
 
+  <blockquote class="verse">
+    <span id="versTxt"></span>
+    <cite id="versRef"></cite>
+  </blockquote>
+
   <p class="lead">Para tudo ser perfeito,<br>toque nos botões abaixo</p>
 
   <nav class="medallions" aria-label="Botões do convite">
@@ -416,7 +435,9 @@
     pixChave: "892.611.862-20",
     pixTipo: "CPF",
     pixNome: "Lindiany Raposo Alves · Caixa Econômica",
-    recado: "Esse momento é tão especial e sonhado por mim. Venha viver comigo esse momento, sua presença é indispensável."
+    recado: "Esse dia é tão especial e sonhado por mim, venha viver comigo esse momento, sua presença é indispensável",
+    versiculo: "Guarda-me como a menina dos teus olhos; esconde-me à sombra das tuas asas",
+    versiculoRef: "Salmos 17:8"
   };
   // ==================================================================
 
@@ -425,6 +446,8 @@
 
   // ---- textos ----
   $("recadoTxt").textContent = "“" + CONFIG.recado + "”";
+  $("versTxt").textContent = "“" + CONFIG.versiculo + "”";
+  $("versRef").textContent = CONFIG.versiculoRef;
   $("dDia").textContent = CONFIG.diaSemana;
   $("dData").textContent = CONFIG.dataTexto;
   $("dHora").textContent = CONFIG.horaTexto;
