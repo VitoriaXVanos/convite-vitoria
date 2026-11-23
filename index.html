@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<!-- ==========================================================
+  CONVITE INTERATIVO — VITÓRIA GABRIELLY · 15 ANOS
+
+  COMO USAR:
+  1) Suba TODOS estes arquivos juntos no GitHub Pages:
+     index.html · convite.mp4 · poster.jpg · localizacao.webp ·
+     confirmacao.webp · presentes.webp · traje.webp
+  2) Para trocar data, local, WhatsApp ou Pix, edite o bloco
+     CONFIG no fim deste arquivo (marcado com [CONFIG]).
+     Os textos visíveis da página são preenchidos a partir dele.
+  3) A música já vem dentro do convite.mp4 (não há mp3 separado).
+========================================================== -->
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Convite · Vitória Gabrielly — 15 Anos</title>
+<meta name="description" content="Convite especial: Vitória Gabrielly, 15 anos. Quinta-feira, 17 de dezembro de 2026, a partir das 20h.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vitória Gabrielly · 15 anos">
+<meta property="og:description" content="Você é meu convidado especial. Toque para abrir o convite.">
+<meta property="og:image" content="https://vitoriaxvanos.github.io/convite-vitoria/poster.jpg">
+<meta name="theme-color" content="#4a1a2b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --rose-deep:#2c0d18;
+    --rose:#4a1a2b;
+    --rose-mid:#6f2c44;
+    --rose-glow:#b56b84;
+    --gold:#e6bf9a;
+    --gold-light:#f9e6d3;
+    --gold-dim:#c39474;
+    --ink:#fdf1e8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Cormorant Garamond',serif;
+    color:var(--ink);
+    background:
+      radial-gradient(130% 85% at 50% -5%, var(--rose-glow) 0%, var(--rose-mid) 30%, var(--rose) 60%, var(--rose-deep) 100%);
+    background-attachment:fixed;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    overflow-x:hidden;
+  }
+
+  /* ---------- brilhos flutuantes ---------- */
+  .sparkles{position:fixed;inset:0;pointer-events:none;z-index:0}
+  .sparkles span{
+    position:absolute;bottom:-4vh;
+    width:5px;height:5px;border-radius:50%;
+    background:radial-gradient(circle,var(--gold-light) 0%,rgba(230,191,154,.55) 45%,transparent 72%);
+    filter:blur(.4px);
+    animation:rise linear infinite;
+    opacity:0;
+  }
+  .sparkles span:nth-child(1){left:8%;animation-duration:14s;animation-delay:0s;width:4px;height:4px}
+  .sparkles span:nth-child(2){left:22%;animation-duration:18s;animation-delay:3s}
+  .sparkles span:nth-child(3){left:37%;animation-duration:12s;animation-delay:6s;width:3px;height:3px}
+  .sparkles span:nth-child(4){left:52%;animation-duration:20s;animation-delay:1.5s}
+  .sparkles span:nth-child(5){left:66%;animation-duration:15s;animation-delay:8s;width:6px;height:6px}
+  .sparkles span:nth-child(6){left:79%;animation-duration:17s;animation-delay:4.5s;width:3px;height:3px}
+  .sparkles span:nth-child(7){left:90%;animation-duration:13s;animation-delay:10s}
+  .sparkles span:nth-child(8){left:45%;animation-duration:22s;animation-delay:12s;width:4px;height:4px}
+  @keyframes rise{
+    0%{transform:translateY(0) translateX(0);opacity:0}
+    12%{opacity:.9}
+    55%{opacity:.55;transform:translateY(-52vh) translateX(10px)}
+    100%{transform:translateY(-108vh) translateX(-8px);opacity:0}
+  }
+
+  /* ---------- respiração do brilho do topo ---------- */
+  body::after{
+    content:"";position:fixed;left:50%;top:-18vh;transform:translateX(-50%);
+    width:130vw;height:62vh;pointer-events:none;z-index:0;
+    background:radial-gradient(closest-side,rgba(246,196,206,.3),rgba(181,107,132,.12) 55%,transparent 78%);
+    animation:breathe 7s ease-in-out infinite alternate;
+  }
+  @keyframes breathe{from{opacity:.45}to{opacity:1}}
+
+  /* ---------- pétalas de lírio caindo ---------- */
+  .petals{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+  .petals i{
+    position:absolute;top:-6vh;display:block;
+    background:radial-gradient(circle at 32% 30%,#ffffff,#fbe3e6 58%,#efb9c3);
+    border-radius:62% 38% 58% 42% / 46% 62% 38% 54%;
+    box-shadow:inset -2px -2px 4px rgba(170,90,110,.35);
+    opacity:0;animation:fall linear infinite;
+  }
+  .petals i:nth-child(1){left:5%;width:13px;height:10px;animation-duration:14s;animation-delay:0s}
+  .petals i:nth-child(2){left:24%;width:16px;height:12px;animation-duration:18s;animation-delay:5s}
+  .petals i:nth-child(3){left:47%;width:11px;height:9px;animation-duration:12s;animation-delay:9s}
+  .petals i:nth-child(4){left:63%;width:15px;height:11px;animation-duration:16s;animation-delay:2.5s}
+  .petals i:nth-child(5){left:81%;width:12px;height:10px;animation-duration:19s;animation-delay:12s}
+  .petals i:nth-child(6){left:92%;width:14px;height:11px;animation-duration:15s;animation-delay:7s}
+  @keyframes fall{
+    0%{transform:translateY(0) translateX(0) rotate(0deg);opacity:0}
+    8%{opacity:.85}
+    50%{transform:translateY(54vh) translateX(28px) rotate(210deg);opacity:.8}
+    100%{transform:translateY(114vh) translateX(-16px) rotate(430deg);opacity:0}
+  }
+
+  /* ---------- bokeh ---------- */
+  .bokeh{position:fixed;inset:0;pointer-events:none;z-index:0}
+  .bokeh b{
+    position:absolute;border-radius:50%;
+    background:radial-gradient(circle,rgba(249,230,211,.5),rgba(230,191,154,.16) 55%,transparent 74%);
+    filter:blur(6px);animation:driftb ease-in-out infinite alternate;
+  }
+  .bokeh b:nth-child(1){left:8%;top:16%;width:64px;height:64px;animation-duration:11s}
+  .bokeh b:nth-child(2){left:74%;top:9%;width:96px;height:96px;animation-duration:15s;animation-delay:2s}
+  .bokeh b:nth-child(3){left:16%;top:62%;width:52px;height:52px;animation-duration:13s;animation-delay:5s}
+  .bokeh b:nth-child(4){left:82%;top:56%;width:72px;height:72px;animation-duration:17s;animation-delay:3.5s}
+  .bokeh b:nth-child(5){left:44%;top:84%;width:58px;height:58px;animation-duration:12s;animation-delay:7s}
+  @keyframes driftb{
+    from{transform:translateY(14px) scale(.93);opacity:.3}
+    to{transform:translateY(-24px) scale(1.07);opacity:.65}
+  }
+
+  main{
+    position:relative;z-index:1;
+    width:100%;max-width:430px;
+    padding:34px 22px 46px;
+    text-align:center;
+  }
+
+  /* ---------- cabeçalho ---------- */
+  .eyebrow{
+    font-size:.78rem;letter-spacing:.42em;text-indent:.42em;
+    text-transform:uppercase;color:var(--gold);font-weight:500;
+  }
+  h1{
+    font-family:'Great Vibes',cursive;font-weight:400;
+    font-size:clamp(2.9rem,12vw,3.6rem);
+    line-height:1.08;margin:10px 0 4px;
+    background:linear-gradient(178deg,#fff4e8 10%,var(--gold-light) 45%,var(--gold) 96%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    text-shadow:0 0 26px rgba(230,191,154,.28);
+  }
+  .years{
+    display:flex;align-items:center;justify-content:center;gap:14px;
+    color:var(--gold-light);font-size:.95rem;letter-spacing:.5em;text-indent:.5em;
+    text-transform:uppercase;font-weight:500;margin-bottom:26px;
+  }
+  .years::before,.years::after{
+    content:"";height:1px;width:44px;
+    background:linear-gradient(90deg,transparent,var(--gold));
+  }
+  .years::after{background:linear-gradient(90deg,var(--gold),transparent)}
+
+  /* ---------- vídeo ---------- */
+  .video-frame{
+    position:relative;border-radius:14px;padding:7px;
+    background:linear-gradient(160deg,var(--gold-light),var(--gold-dim) 38%,var(--gold) 68%,var(--gold-light));
+    box-shadow:0 14px 44px rgba(0,0,0,.5),0 0 60px rgba(230,191,154,.16);
+  }
+  .video-frame::after{
+    content:"";position:absolute;inset:3px;border-radius:11px;
+    border:1px solid rgba(44,13,24,.5);pointer-events:none;
+  }
+  video{
+    display:block;width:100%;aspect-ratio:9/16;
+    border-radius:9px;background:var(--rose-deep);object-fit:cover;
+  }
+
+  /* ---------- contagem regressiva ---------- */
+  .count-title{
+    font-family:'Great Vibes',cursive;font-size:1.7rem;color:var(--gold-light);
+    margin:34px 0 14px;text-shadow:0 0 18px rgba(249,230,211,.25);
+  }
+  .countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  .countdown div{
+    border:1px solid rgba(230,191,154,.45);border-radius:12px;padding:12px 4px 10px;
+    background:rgba(44,13,24,.38);
+  }
+  .countdown strong{display:block;font-size:1.9rem;font-weight:600;line-height:1;color:var(--gold-light);font-variant-numeric:tabular-nums}
+  .countdown span{display:block;margin-top:6px;font-size:.7rem;letter-spacing:.22em;text-indent:.22em;text-transform:uppercase;color:var(--ink)}
+  .count-done{font-family:'Great Vibes',cursive;font-size:2rem;color:var(--gold-light)}
+
+  /* ---------- chamada ---------- */
+  .lead{
+    font-family:'Great Vibes',cursive;font-weight:400;
+    font-size:1.9rem;line-height:1.25;color:var(--gold-light);
+    margin:34px 0 26px;text-shadow:0 0 18px rgba(249,230,211,.25);
+  }
+
+  /* ---------- medalhões ---------- */
+  .medallions{
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:30px 18px;justify-items:center;
+  }
+  .medallion{
+    display:flex;flex-direction:column;align-items:center;gap:11px;
+    text-decoration:none;background:none;border:none;cursor:pointer;
+    font-family:inherit;color:inherit;
+  }
+  .coin{
+    position:relative;width:118px;height:118px;border-radius:50%;
+    transition:transform .25s ease;
+  }
+  .coin::before{
+    content:"";position:absolute;inset:-9px;border-radius:50%;z-index:-1;
+    background:conic-gradient(from 0deg,
+      rgba(230,191,154,.14) 0%,rgba(230,191,154,.14) 66%,
+      var(--gold-light) 80%,rgba(230,191,154,.14) 94%);
+    animation:ring 7s linear infinite;filter:blur(2.5px);
+  }
+  @keyframes ring{to{transform:rotate(360deg)}}
+  .coin img{
+    display:block;width:100%;height:100%;
+    filter:drop-shadow(0 7px 18px rgba(0,0,0,.5));
+  }
+  .medallion span{
+    font-family:'Great Vibes',cursive;font-size:1.35rem;line-height:1.1;
+    color:var(--gold-light);max-width:150px;
+  }
+  .medallion:hover .coin,.medallion:focus-visible .coin{transform:scale(1.07)}
+  .medallion:focus-visible{outline:none}
+  .medallion:focus-visible .coin{box-shadow:0 0 0 3px var(--gold-light);border-radius:50%}
+
+  /* ---------- recado ---------- */
+  .recado{
+    margin-top:44px;padding:26px 8px 0;position:relative;
+    font-style:italic;font-weight:500;font-size:1.25rem;line-height:1.5;color:var(--ink);
+  }
+  .recado::before{
+    content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+    width:120px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  }
+  .recado cite{
+    display:block;margin-top:10px;font-family:'Great Vibes',cursive;font-style:normal;
+    font-size:2rem;color:var(--gold-light);
+  }
+
+  /* ---------- detalhes ---------- */
+  .details{
+    margin-top:34px;
+    font-size:1.02rem;letter-spacing:.16em;text-indent:.16em;
+    text-transform:uppercase;color:var(--ink);line-height:2;font-weight:500;
+  }
+  .details strong{color:var(--gold-light);font-weight:600}
+  .pill{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    min-height:46px;margin-top:20px;padding:10px 26px;cursor:pointer;
+    background:none;border:1px solid var(--gold);border-radius:999px;
+    color:var(--gold-light);font-family:'Cormorant Garamond',serif;font-weight:600;
+    font-size:.9rem;letter-spacing:.24em;text-indent:.24em;text-transform:uppercase;
+    text-decoration:none;transition:background .2s ease;
+  }
+  .pill:hover,.pill:focus-visible{background:rgba(230,191,154,.16);outline:none}
+  .pill.solid{background:var(--gold-light);color:var(--rose-deep);border-color:var(--gold-light)}
+  .pill.solid:hover,.pill.solid:focus-visible{background:#fff}
+
+  /* ---------- cartões (traje e presentes) ---------- */
+  .overlay{
+    position:fixed;inset:0;z-index:10;display:none;
+    align-items:center;justify-content:center;padding:22px;
+    background:rgba(22,5,11,.84);backdrop-filter:blur(5px);
+    overflow-y:auto;
+  }
+  .overlay.open{display:flex}
+  .card{
+    width:100%;max-width:340px;border-radius:14px;padding:8px;
+    background:linear-gradient(160deg,var(--gold-light),var(--gold-dim) 40%,var(--gold));
+    box-shadow:0 20px 60px rgba(0,0,0,.6);
+  }
+  .card-inner{
+    border-radius:9px;padding:32px 22px 26px;text-align:center;
+    background:radial-gradient(120% 100% at 50% 0%,var(--rose-mid) 0%,var(--rose) 55%,var(--rose-deep) 100%);
+    border:1px solid rgba(249,230,211,.35);
+  }
+  .card-inner h2{
+    font-family:'Great Vibes',cursive;font-weight:400;font-size:2.4rem;
+    color:var(--gold-light);margin-bottom:12px;
+  }
+  .card-inner .big{
+    font-size:1.25rem;letter-spacing:.22em;text-indent:.22em;
+    text-transform:uppercase;color:var(--ink);font-weight:600;line-height:1.6;
+  }
+  .card-inner small{
+    display:block;margin-top:10px;font-size:1rem;color:var(--gold-light);
+    letter-spacing:.04em;font-style:italic;
+  }
+  .gift{margin-top:16px;padding-top:16px;border-top:1px solid rgba(230,191,154,.35)}
+  .gift:first-of-type{margin-top:4px;padding-top:0;border-top:none}
+  .gift h3{font-size:.8rem;font-weight:600;letter-spacing:.3em;text-indent:.3em;text-transform:uppercase;color:var(--gold)}
+  .gift p{margin-top:6px;font-size:1.2rem;font-weight:600;line-height:1.35;color:var(--ink)}
+  .gift p.sub{font-size:1.02rem;font-weight:500;color:var(--gold-light)}
+  .gift .pill{margin-top:12px}
+  .close{margin-top:22px}
+
+  @media (prefers-reduced-motion:reduce){
+    .coin::before,body::after{animation:none}
+    .sparkles,.petals,.bokeh{display:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="sparkles" aria-hidden="true">
+  <span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span>
+</div>
+<div class="petals" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="bokeh" aria-hidden="true"><b></b><b></b><b></b><b></b><b></b></div>
+
+<main>
+  <p class="eyebrow">Convite Especial</p>
+  <h1>Vitória Gabrielly</h1>
+  <p class="years">15 anos</p>
+
+  <div class="video-frame">
+    <video src="convite.mp4" poster="poster.jpg" controls playsinline preload="metadata"></video>
+  </div>
+
+  <section aria-labelledby="cdTitle">
+    <h2 class="count-title" id="cdTitle">Faltam para o grande dia</h2>
+    <div class="countdown" id="countdown">
+      <div><strong id="cdD">--</strong><span>dias</span></div>
+      <div><strong id="cdH">--</strong><span>horas</span></div>
+      <div><strong id="cdM">--</strong><span>min</span></div>
+      <div><strong id="cdS">--</strong><span>seg</span></div>
+    </div>
+    <p class="count-done" id="cdDone" hidden>Chegou o grande dia!</p>
+  </section>
+
+  <p class="lead">Para tudo ser perfeito,<br>toque nos botões abaixo</p>
+
+  <nav class="medallions" aria-label="Botões do convite">
+    <a class="medallion" id="mapLink" href="#" target="_blank" rel="noopener">
+      <div class="coin" aria-hidden="true"><img src="localizacao.webp" alt="" width="118" height="118" loading="lazy"></div>
+      <span>Localização</span>
+    </a>
+    <a class="medallion" id="waLink" href="#" target="_blank" rel="noopener">
+      <div class="coin" aria-hidden="true"><img src="confirmacao.webp" alt="" width="118" height="118" loading="lazy"></div>
+      <span>Confirmação<br>de Presença</span>
+    </a>
+    <button class="medallion" type="button" id="giftBtn" aria-haspopup="dialog">
+      <div class="coin" aria-hidden="true"><img src="presentes.webp" alt="" width="118" height="118" loading="lazy"></div>
+      <span>Sugestão<br>de Presentes</span>
+    </button>
+    <button class="medallion" type="button" id="dressBtn" aria-haspopup="dialog">
+      <div class="coin" aria-hidden="true"><img src="traje.webp" alt="" width="118" height="118" loading="lazy"></div>
+      <span>Traje</span>
+    </button>
+  </nav>
+
+  <blockquote class="recado">
+    <span id="recadoTxt"></span>
+    <cite>Vitória</cite>
+  </blockquote>
+
+  <p class="details">
+    <span id="dDia"></span> · <strong id="dData"></strong><br>
+    <strong id="dHora"></strong><br>
+    <span id="dLocal"></span><br>
+    <span id="dEnd"></span>
+  </p>
+  <a class="pill" id="calLink" href="#" target="_blank" rel="noopener">Salvar na agenda</a>
+</main>
+
+<!-- cartão do traje -->
+<div class="overlay" id="dressOverlay" role="dialog" aria-modal="true" aria-labelledby="dressTitle">
+  <div class="card"><div class="card-inner">
+    <h2 id="dressTitle">Traje</h2>
+    <p class="big" id="trajeTxt"></p>
+    <small id="trajeObs"></small>
+    <button class="pill close" type="button" data-close>Fechar</button>
+  </div></div>
+</div>
+
+<!-- cartão dos presentes -->
+<div class="overlay" id="giftOverlay" role="dialog" aria-modal="true" aria-labelledby="giftTitle">
+  <div class="card"><div class="card-inner">
+    <h2 id="giftTitle">Presentes</h2>
+    <div class="gift">
+      <h3>Mesinha de presentes</h3>
+      <p id="lojaNome"></p>
+      <a class="pill" id="lojaLink" href="#" target="_blank" rel="noopener">Ver no mapa</a>
+    </div>
+    <div class="gift">
+      <h3>Ou, se preferir, Pix</h3>
+      <p id="pixChave"></p>
+      <p class="sub" id="pixNome"></p>
+      <button class="pill solid" type="button" id="pixCopy">Copiar chave Pix</button>
+      <p class="sub" id="pixMsg" role="status" aria-live="polite"></p>
+    </div>
+    <button class="pill close" type="button" data-close>Fechar</button>
+  </div></div>
+</div>
+
+<script>
+  // ============================ [CONFIG] ============================
+  const CONFIG = {
+    nome: "Vitória Gabrielly",
+    inicio: "2026-12-17T20:00:00-03:00",   // data e hora da festa (horário de Macapá)
+    duracaoHoras: 4,                        // usado só no "Salvar na agenda"
+    diaSemana: "Quinta-feira",
+    dataTexto: "17 de dezembro de 2026",
+    horaTexto: "A partir das 20h",
+    local: "Espaço Alerquim",
+    endereco: "Rua Jovino Dinoá — Central",
+    mapaBusca: "Espaço Alerquim, Rua Jovino Dinoá, Central, Macapá - AP",
+    whatsapp: "5596991060243",              // 55 + DDD + número, sem espaços
+    traje: "Esporte Fino",
+    trajeObs: "Opcional. Venha elegante e confortável.",
+    loja: "Lojas Benoliel",
+    lojaBusca: "Lojas Benoliel, Macapá - AP",
+    pixChave: "892.611.862-20",
+    pixTipo: "CPF",
+    pixNome: "Lindiany Raposo Alves · Caixa Econômica",
+    recado: "Esse momento é tão especial e sonhado por mim. Venha viver comigo esse momento, sua presença é indispensável."
+  };
+  // ==================================================================
+
+  const $ = (id) => document.getElementById(id);
+  const mapa = (q) => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
+
+  // ---- textos ----
+  $("recadoTxt").textContent = "“" + CONFIG.recado + "”";
+  $("dDia").textContent = CONFIG.diaSemana;
+  $("dData").textContent = CONFIG.dataTexto;
+  $("dHora").textContent = CONFIG.horaTexto;
+  $("dLocal").textContent = CONFIG.local;
+  $("dEnd").textContent = CONFIG.endereco;
+  $("trajeTxt").textContent = CONFIG.traje;
+  $("trajeObs").textContent = CONFIG.trajeObs;
+  $("lojaNome").textContent = CONFIG.loja;
+  $("pixChave").textContent = CONFIG.pixChave + " (" + CONFIG.pixTipo + ")";
+  $("pixNome").textContent = CONFIG.pixNome;
+
+  // ---- links ----
+  $("mapLink").href = mapa(CONFIG.mapaBusca);
+  $("lojaLink").href = mapa(CONFIG.lojaBusca);
+  $("waLink").href = "https://wa.me/" + CONFIG.whatsapp + "?text=" +
+    encodeURIComponent("Olá! Confirmo minha presença na festa de 15 anos da " + CONFIG.nome + "! 🌸");
+
+  const ini = new Date(CONFIG.inicio);
+  const fim = new Date(ini.getTime() + CONFIG.duracaoHoras * 3600000);
+  const z = (d) => d.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+  $("calLink").href = "https://calendar.google.com/calendar/render?action=TEMPLATE" +
+    "&text=" + encodeURIComponent("15 anos da " + CONFIG.nome) +
+    "&dates=" + z(ini) + "/" + z(fim) +
+    "&location=" + encodeURIComponent(CONFIG.local + " — " + CONFIG.endereco) +
+    "&details=" + encodeURIComponent("Traje: " + CONFIG.traje + " (opcional). Convite: " + location.href);
+
+  // ---- contagem regressiva ----
+  const dois = (n) => String(n).padStart(2, "0");
+  function tick(){
+    const ms = ini.getTime() - Date.now();
+    if (ms <= 0){ $("countdown").hidden = true; $("cdDone").hidden = false; return; }
+    const s = Math.floor(ms / 1000);
+    $("cdD").textContent = Math.floor(s / 86400);
+    $("cdH").textContent = dois(Math.floor(s % 86400 / 3600));
+    $("cdM").textContent = dois(Math.floor(s % 3600 / 60));
+    $("cdS").textContent = dois(s % 60);
+    setTimeout(tick, 1000);
+  }
+  tick();
+
+  // ---- cartões ----
+  function ligar(btnId, overlayId){
+    const btn = $(btnId), ov = $(overlayId), fechar = ov.querySelector("[data-close]");
+    const abre = () => { ov.classList.add("open"); fechar.focus(); };
+    const fecha = () => { ov.classList.remove("open"); btn.focus(); };
+    btn.addEventListener("click", abre);
+    fechar.addEventListener("click", fecha);
+    ov.addEventListener("click", (e) => { if (e.target === ov) fecha(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && ov.classList.contains("open")) fecha(); });
+  }
+  ligar("dressBtn", "dressOverlay");
+  ligar("giftBtn", "giftOverlay");
+
+  // ---- copiar Pix ----
+  $("pixCopy").addEventListener("click", async () => {
+    const chave = CONFIG.pixChave.replace(/\D/g, "");
+    try {
+      await navigator.clipboard.writeText(chave);
+      $("pixMsg").textContent = "Chave copiada!";
+    } catch (e) {
+      const t = document.createElement("textarea");
+      t.value = chave; document.body.appendChild(t); t.select();
+      try { document.execCommand("copy"); $("pixMsg").textContent = "Chave copiada!"; }
+      catch (e2) { $("pixMsg").textContent = "Copie a chave acima."; }
+      t.remove();
+    }
+  });
+</script>
+</body>
+</html>
